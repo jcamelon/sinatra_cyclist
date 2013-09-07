@@ -16,9 +16,7 @@ module Sinatra
         number_of_routes = settings.routes_to_cycle_through.length
         page = settings.routes_to_cycle_through[session[:_cycle_page_index] % number_of_routes]
 
-        session[:_cycle_duration] = params[:duration] || 30
-        puts "Duration set to #{session[:_cycle_duration]}"
-
+        session[:_cycle_duration] = params[:duration] || 45
         session[:_cycle] = true
 
         redirect "/#{page}"
