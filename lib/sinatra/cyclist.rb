@@ -19,7 +19,7 @@ module Sinatra
         session[:_cycle_duration] = params[:duration] || 45
         session[:_cycle] = true
 
-        redirect "/#{page}"
+        redirect "http://dev-whistler-app01.kendall.corp.akamai.com/#{page}"
       end
 
       app.before do
