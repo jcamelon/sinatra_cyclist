@@ -19,11 +19,11 @@ module Sinatra
         session[:_cycle_duration] = params[:duration] || 30
         session[:_cycle] = true
 
-        puts "redirect host = #{session[:redirect_host]}"
-        if session[:redirect_host].nil? 
+        puts "redirect host = #{settings.redirect_host}"
+        if settings.redirect_host.nil? 
           redirect "/#{page}"
         else
-          redirect "#{session[:redirect_host]}/#{page}"
+          redirect "#{settings.redirect_host}/#{page}"
         end
       end
 
