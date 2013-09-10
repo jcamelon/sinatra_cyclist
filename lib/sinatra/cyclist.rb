@@ -23,6 +23,7 @@ module Sinatra
           redirect "/#{page}"
         else
           redirect "#{session[:rediredt_host]}/#{page}"
+        end
       end
 
       app.before do
