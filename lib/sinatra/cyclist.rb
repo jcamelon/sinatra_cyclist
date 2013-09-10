@@ -23,7 +23,7 @@ module Sinatra
         if session[:redirect_host].nil? 
           redirect "/#{page}"
         else
-          redirect "#{session[:rediredt_host]}/#{page}"
+          redirect "#{session[:redirect_host]}/#{page}"
         end
       end
 
