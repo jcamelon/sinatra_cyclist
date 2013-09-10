@@ -16,10 +16,13 @@ module Sinatra
         number_of_routes = settings.routes_to_cycle_through.length
         page = settings.routes_to_cycle_through[session[:_cycle_page_index] % number_of_routes]
 
-        session[:_cycle_duration] = params[:duration] || 45
+        session[:_cycle_duration] = params[:duration] || 30
         session[:_cycle] = true
 
-        redirect "http://dev-whistler-app01.kendall.corp.akamai.com/#{page}"
+        if session[:redirect_host].nil? 
+          redirect "/#{page}"
+        else
+          redirect "#{session[:rediredt_host]}/#{page}"
       end
 
       app.before do
